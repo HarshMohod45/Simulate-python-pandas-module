@@ -1,0 +1,72 @@
+# SimPandas
+
+A simple Python library for basic DataFrame operations, inspired by pandas.  
+SimPandas lets you load, view, modify, and save tabular data (CSV files) using custom classes.
+
+## Features
+
+- Load CSV data into a DataFrame
+- Display data in a table format
+- Access rows and columns easily
+- Modify columns and individual cells
+- Save changes back to CSV
+- Basic column analytics: sum, min, max (for numeric columns)
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x
+
+### Usage
+
+1. **Clone or download the project.**
+2. Place your CSV file (e.g., `emps.csv`) in the project folder.
+
+#### Example
+
+```python
+from module import readfile
+ 
+df = readfile("emps.csv")
+
+ 
+df.show()
+
+ 
+print(df[0])   
+
+ 
+salary_col = df["Salary"]
+print(salary_col.sum())   
+
+ 
+df.set_cell(1, "Salary", 4000)
+
+ 
+df.set_column("Bonus", [500, 600, 400])
+
+ 
+df.save_to_file("new_emps.csv")
+```
+
+## File Structure
+
+- `module.py` : Main DataFrame and Column classes
+- `emps.csv` : Sample CSV data
+
+## How it Works
+
+- `readfile(filename)` loads CSV data into a DataFrame object.
+- `DataFrame.show()` prints the table.
+- `DataFrame[col_name]` or `DataFrame[row_index]` accesses columns/rows.
+- `set_column` and `set_cell` modify data.
+- `save_to_file(filename)` saves the DataFrame to CSV.
+
+## License
+
+MIT License
+
+## Author
+
+Your Name
